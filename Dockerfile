@@ -2,15 +2,14 @@
 #                       Dockerfile
 # ------------------------------------------------------
 # image:    hubot
-# name:     minddocdev/hubot
-# repo:     https://github.com/mind-doc/hubot
+# name:     cbpowell/hubot-docker (adapted from minddocdev/hubot)
+# repo:     https://github.com/cbpowell/hubot-docker
 # Requires: node:alpine
-# authors:  development@minddoc.com
 # ------------------------------------------------------
 
 FROM node:lts-alpine
 
-LABEL maintainer="development@minddoc.com"
+LABEL maintainer="cbpowell@gmail.com"
 
 # Install hubot dependencies
 RUN apk update\
@@ -29,12 +28,13 @@ RUN chown -R hubot:hubot .
 USER hubot
 
 # Install hubot version HUBOT_VERSION
-ENV HUBOT_NAME "robot"
-ENV HUBOT_OWNER "MindDoc <development@minddoc.com>"
-ENV HUBOT_DESCRIPTION "A robot may not harm humanity, or, by inaction, allow humanity to come to harm"
+ENV HUBOT_DESCRIPTION "Your friendly benevolent robot overload."
+ENV HUBOT_OWNER "psyjnir"
+ENV HUBOT_NAME "mumbot"
+ENV HUBOT_ADAPTER "irc"
 RUN yo hubot\
- --adapter=slack\
  --owner="$HUBOT_OWNER"\
+ --adapter="$HUBOT_ADAPTER"\
  --name="$HUBOT_NAME"\
  --description="$HUBOT_DESCRIPTION"\
  --defaults
@@ -46,4 +46,4 @@ EXPOSE 80
 
 ENTRYPOINT ["./entrypoint.sh"]
 
-CMD ["--name", "$HUBOT_NAME", "--adapter", "slack"]
+CMD ["--name", "$HUBOT_NAME", "--adapter", "$HUBOT_ADAPTER"]
