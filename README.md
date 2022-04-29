@@ -16,8 +16,6 @@ Each docker image tag points to a specific Hubot 3.x version.
 
 The following environment variables should be provided if you want to use Hubot.
 
-* `HUBOT_SLACK_TOKEN` - Required Slack hubot integration API token.
-  See [hubot-slack documentation](https://slack.dev/hubot-slack/).
 * `HUBOT_IRC_SERVER` - Required, IRC server address.
 * `HUBOT_IRC_ROOMS` - Required, rooms on server to join.
 * `HUBOT_IRC_NICK` - Required, nickname for robot to use on server.
