@@ -28,7 +28,7 @@ RUN chown -R hubot:hubot .
 USER hubot
 
 # Install hubot version HUBOT_VERSION
-ENV HUBOT_DESCRIPTION "Your friendly benevolent robot overload."
+ENV HUBOT_DESCRIPTION "Your friendly benevolent robot overlord."
 ENV HUBOT_OWNER "psyjnir"
 ENV HUBOT_NAME "mumbot"
 ENV HUBOT_ADAPTER "irc"

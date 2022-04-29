@@ -23,11 +23,11 @@ The following environment variables should be provided if you want to use Hubot.
 See [hubot-irc](https://github.com/nandub/hubot-irc#configuring-the-adapter) for all optional configuration environment variables.
 
 * `HUBOT_NAME` - Optional bot name.
-  Defaults to `robot`.
+  Defaults to `mumbot`.
 * `HUBOT_OWNER` - Optional bot owner name.
-  Defaults to `MindDoc <development@minddoc.com>`.
+  Defaults to `psyjnir`.
 * `HUBOT_DESCRIPTION` - Optional bot description.
-  Defaults to `A robot may not harm humanity, or, by inaction, allow humanity to come to harm`.
+  Defaults to `Your friendly benevolent robot overlord`.
 * `EXTRA_PACKAGES` - Optional comma-separated list of NPM packages, required by your scripts.
 
 ## Docker Hub
