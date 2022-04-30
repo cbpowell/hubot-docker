@@ -49,8 +49,4 @@ ARG HUBOT_VERSION="3.3.2"
 RUN jq --arg HUBOT_VERSION "$HUBOT_VERSION" '.dependencies.hubot = $HUBOT_VERSION' package.json > /tmp/package.json\
  && mv /tmp/package.json .
 
-EXPOSE 80
-
-#ENTRYPOINT ["./entrypoint.sh"]
-
 CMD ./entrypoint.sh --name $HUBOT_NAME --adapter $HUBOT_ADAPTER
