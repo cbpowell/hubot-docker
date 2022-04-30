@@ -73,7 +73,7 @@ docker run -ti -e EXTRA_PACKAGES=aws-sdk,cron theta142/hubot-docker /bin/sh
 Mount `external-scripts.json` as a volume:
 
 ```sh
-docker run -ti -v ${PWD}/external-scripts.json:/hubot/external-scripts.json theta142/hubot-docker /bin/sh
+docker run -ti -v ${PWD}/external-scripts.json:/home/hubot/external-scripts.json theta142/hubot-docker /bin/sh
 ```
 
 ## Links

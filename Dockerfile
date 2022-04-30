@@ -15,14 +15,21 @@ LABEL maintainer="cbpowell@gmail.com"
 RUN apk update\
  && apk upgrade\
  && apk add jq\
- && npm install -g yo generator-hubot@next\
- && rm -rf /var/cache/apk/*
+ && apk add git
+
+RUN rm -rf /var/cache/apk/*
 
 # Create hubot user with privileges
 RUN addgroup -g 501 hubot\
  && adduser -D -h /hubot -u 501 -G hubot hubot
 ENV HOME /home/hubot
+
 WORKDIR $HOME
+
+RUN npm install -g yo generator-hubot@next\
+ && npm install typescript\
+ && npm install hubot-irc@">=0.4.0 <0.5.0"
+
 COPY entrypoint.sh ./
 RUN chown -R hubot:hubot .
 USER hubot
@@ -44,6 +51,6 @@ RUN jq --arg HUBOT_VERSION "$HUBOT_VERSION" '.dependencies.hubot = $HUBOT_VERSIO
 
 EXPOSE 80
 
-ENTRYPOINT ["./entrypoint.sh"]
+#ENTRYPOINT ["./entrypoint.sh"]
 
-CMD ["--name", "$HUBOT_NAME", "--adapter", "$HUBOT_ADAPTER"]
+CMD ./entrypoint.sh --name $HUBOT_NAME --adapter $HUBOT_ADAPTER
