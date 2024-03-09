@@ -27,7 +27,8 @@ RUN npx hubot --create hubot --adapter @hubot-friends/hubot-irc
 
 WORKDIR $HOME/hubot
 
-# Copy entrypoint
+# Copy entrypoints
 COPY entrypoint.sh .
+COPY debug_entry.sh .
 
 CMD ./entrypoint.sh
