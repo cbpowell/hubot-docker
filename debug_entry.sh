@@ -12,4 +12,4 @@ fi
 #
 # printf"\\n****************** Starting %s (adapter: %s) ******************\\n" "$HUBOT_NAME" "$HUBOT_ADAPTER"
 
-npm start
+node --inspect=0.0.0.0 ./node_modules/hubot/bin/hubot --adapter @hubot-friends/hubot-irc
