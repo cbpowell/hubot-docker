@@ -9,7 +9,5 @@ if [ -n "$EXTERNAL_SCRIPTS" ]; then
   printf "\\n********* Installing packages from external-scripts.json *********\\n"
   npm install --save $(jq -r '.[]' ./external-scripts.json | paste -sd" " -)
 fi
-#
-# printf"\\n****************** Starting %s (adapter: %s) ******************\\n" "$HUBOT_NAME" "$HUBOT_ADAPTER"
 
 npm start

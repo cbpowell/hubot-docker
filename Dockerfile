@@ -7,7 +7,7 @@
 # Requires: node:alpine
 # ------------------------------------------------------
 
-FROM node:19-bullseye-slim
+FROM --platform=linux/amd64 node:19-bullseye-slim
 
 LABEL maintainer="cbpowell@gmail.com"
 
